@@ -140,8 +140,9 @@ REST_FRAMEWORK = {
     ]
 }
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-    'AUTH_HEADER_TYPES': ('Bearer',)
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=15)
 }
 
 CORS_ALLOWED_ORIGINS = [

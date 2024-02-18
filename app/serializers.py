@@ -8,7 +8,7 @@ from rest_framework.exceptions import APIException
 class SubGoalSerializer(ModelSerializer):
     class Meta:
         model = SubGoal
-        fields = ("id", "title", "deadline",)
+        fields = ("id", "title", "deadline", "is_done")
 
 
 class GoalSerializer(ModelSerializer):
@@ -18,7 +18,8 @@ class GoalSerializer(ModelSerializer):
     class Meta:
         model = Goal
         fields = (
-            "id", "title", "deadline", "reward", "max_value_to_achieve_goal",
+            "id", "title", "deadline", "measurable", "max_value_to_achieve_goal",
+            "relevant", "is_done",
             "managed_value", "progress", "sub_goals"
         )
 
